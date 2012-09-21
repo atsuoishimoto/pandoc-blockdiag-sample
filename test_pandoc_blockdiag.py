@@ -39,5 +39,14 @@ def test_find_blockdiag():
         assert args == ['blockdiag']
         assert kwargs == []
 
+def test_runblockdiag():
+    d = {u'CodeBlock': [
+            ['chart1', ['blockdiag'], []],
+            """
+            { A -> B -> C; }
+            """]}
+
+    pandoc_blockdiag.run_blockdiag(d)
+    print d
 if __name__ == '__main__':
     test_walk()
