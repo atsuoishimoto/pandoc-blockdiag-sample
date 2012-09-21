@@ -47,6 +47,9 @@ def test_runblockdiag():
             """]}
 
     pandoc_blockdiag.run_blockdiag(d)
-    print d
+    img = d['Para'][0]
+    alt, (url, title) = img['Image']
+    
+    
 if __name__ == '__main__':
     test_walk()
